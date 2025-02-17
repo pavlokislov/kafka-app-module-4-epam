@@ -1,0 +1,1 @@
+package org.pkislov.task2.dto;import jakarta.validation.constraints.NotNull;import lombok.AllArgsConstructor;import lombok.Data;import lombok.NoArgsConstructor;@Data@AllArgsConstructor@NoArgsConstructorpublic class DistanceDto {    @NotNull(message = "id cannot be null")    private Long id;    private double distance;}
