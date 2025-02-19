@@ -8,7 +8,8 @@
   <name>Archetype - Kafka-module-3</name>
   <url>http://maven.apache.org</url>
   <modules>
-    <module>Task1</module>
+<!--    <module>Task1</module>-->
     <module>Taxi-app</module>
+    <module>Task-1-test-container</module>
   </modules>
 </project>

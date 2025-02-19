@@ -1,4 +1,10 @@
-Task 2
+**Task 1** 
+
+Task-1-test-container/src/test/java/KafkaIntegrationTest.java
+![img_5.png](img_5.png)
+
+**Task 2**
+
 Null validation
 ![img_1.png](img_1.png)
 
