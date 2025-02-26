@@ -1,3 +1,4 @@
+import org.apache.kafka.clients.consumer.ConsumerConfig;
 import org.apache.kafka.clients.consumer.ConsumerRecord;
 import org.apache.kafka.clients.consumer.ConsumerRecords;
 import org.apache.kafka.clients.consumer.KafkaConsumer;
@@ -42,11 +43,13 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
         producerProps.put(ProducerConfig.VALUE_SERIALIZER_CLASS_CONFIG, StringSerializer.class.getName());
 
         consumerProps = new Properties();
-        consumerProps.put("bootstrap.servers", kafkaContainer.getBootstrapServers());
-        consumerProps.put("group.id", GROUP_ID);
-        consumerProps.put("key.deserializer", StringDeserializer.class.getName());
-        consumerProps.put("value.deserializer", StringDeserializer.class.getName());
-        consumerProps.put("auto.offset.reset", "earliest");
+        consumerProps.put(ConsumerConfig.BOOTSTRAP_SERVERS_CONFIG, kafkaContainer.getBootstrapServers());
+        consumerProps.put(ConsumerConfig.GROUP_ID_CONFIG, GROUP_ID);
+        consumerProps.put(ConsumerConfig.KEY_DESERIALIZER_CLASS_CONFIG, StringDeserializer.class.getName());
+        consumerProps.put(ConsumerConfig.VALUE_DESERIALIZER_CLASS_CONFIG, StringDeserializer.class.getName());
+        consumerProps.put(ConsumerConfig.AUTO_OFFSET_RESET_CONFIG, "earliest");
+        consumerProps.put(ConsumerConfig.AUTO_COMMIT_INTERVAL_MS_CONFIG, 0);
+
     }
 
     @Test
